@@ -27,10 +27,20 @@ Para la solución puedes inspirarte en: https://codepen.io/gabrieleromanato/pen/
     <title></title>
   </head>
   <body>
-
-	   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<div id="gallery">
+	  <figure><img src="http://lorempixel.com/400/200/animals/" alt=""><figcaption></figcaption></figure>
+	  <figure><img src="http://lorempixel.com/400/200/city/" alt=""><figcaption></figcaption></figure>
+	  <figure><img src="http://lorempixel.com/400/200/people/" alt=""><figcaption></figcaption></figure>
+	</div>  
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 	    <script type="text/javascript">
-
+		$(function() {
+    	$( "img", "#gallery" ).on( "contextmenu", function( e ) {
+        e.preventDefault();
+        $( "figcaption", "#gallery" ).text( "" );
+        $( this ).next().text( $( this ).attr( "src" ) );
+    });
+});
 	    </script>
   </body>
 </html>
