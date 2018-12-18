@@ -13,7 +13,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Cosas de JS</title>
   </head>
   <body>
     <h1> Hey !! </h1>
@@ -62,5 +62,28 @@
 
       </fieldset>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript">
+      $("h1").css("color", "red");
+      $(".section-1").css("background-color", "yellow");
+      //obtener lo que esta en el counter
+      //convertir el texto a integer (numero)
+      //sumarle 10 y el resultado ponerlo en el span counter
+      var counter = $(".counter").text();
+      counter = parseInt(counter);
+      counter = counter + 10;
+      $('.counter').text(counter);
+      console.log("valor del counter", typeof counter);
+      console.log(counter);
+
+      $("#row-3").click(function(){
+        $("#row-3").css("transition", "1s");
+        $("#row-3").css("background-color", "grey");
+      });
+
+      $(".section-1 > h1").css("font-size", "4em");
+
+      $("tr:last-child").css("background-color","red");
+    </script>
   </body>
 </html>
